@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: -2076007791, guid: aa81bbec85a3f423193272a7c6154986, type: 3}
   m_Name: TextSong1
   m_EditorClassIdentifier: 
-  mSourceClip: {fileID: 8300000, guid: a8e2c51feb03d1846b91bf64ee2c962d, type: 3}
+  mSourceClip: {fileID: 8300000, guid: cd71d4c2f0473334ca097cc53ebdecf2, type: 3}
   mAudioFilePath: 
   mSampleRate: -1
   mIgnoreLatencyOffset: 0
   mTempoSections:
   - sectionName: New Section
     startSample: 0
-    samplesPerBeat: 33923.07692307692
-    beatsPerMeasure: 8
+    samplesPerBeat: 14700
+    beatsPerMeasure: 16
+    bStartNewMeasure: 1
+  - sectionName: New Section
+    startSample: 0
+    samplesPerBeat: 14700
+    beatsPerMeasure: 16
     bStartNewMeasure: 1
   mTracks:
   - {fileID: 11400000, guid: 08037e72bf2b06c468033f619c32d58e, type: 2}

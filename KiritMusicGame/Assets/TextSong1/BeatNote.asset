@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: BeatNote
   m_EditorClassIdentifier: 
   mEventID: NoteBeat
-  mEventList:
-  - mStartSample: 67846
-    mEndSample: 67846
-  - mStartSample: 101769
-    mEndSample: 101769
-  _SerializedPayloadTypes:
-  - SonicBloom.Koreo.IntPayload
+  mEventList: []
+  _SerializedPayloadTypes: []
   _ColorPayloads: []
   _ColorPayloadIdxs: 
   _CurvePayloads: []
@@ -28,10 +23,8 @@ MonoBehaviour:
   _FloatPayloadIdxs: 
   _GradientPayloads: []
   _GradientPayloadIdxs: 
-  _IntPayloads:
-  - mIntVal: 3
-  - mIntVal: 6
-  _IntPayloadIdxs: 0000000001000000
+  _IntPayloads: []
+  _IntPayloadIdxs: 
   _SpectrumPayloads: []
   _SpectrumPayloadIdxs: 
   _TextPayloads: []

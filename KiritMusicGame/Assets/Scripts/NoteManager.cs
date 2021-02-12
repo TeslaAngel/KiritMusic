@@ -16,7 +16,8 @@ public class NoteManager : MonoBehaviour
     [Space]
     public Transform[] Tracks;
     //public List<GameObject> Notes = new List<GameObject>();
-    public GameObject[] NoteBeats;
+    //public GameObject[] NoteBeats;
+    public List<GameObject> NoteBeats = new List<GameObject>();
 
     public float NoteSpeed;
     public float EndVertical;
@@ -34,18 +35,29 @@ public class NoteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int I=0; I< NoteBeats.Length; I++)
+        if(NoteBeats.Count>0)
+        for(int I=0; I< NoteBeats.Count; I++)
         {
             NoteBeats[I].transform.Translate(0, 0, -NoteSpeed * Time.deltaTime);
 
             if (NoteBeats[I].transform.position.z < EndVertical - NoteDiameter)
             {
-                Destroy(NoteBeats[I]);
-                NoteBeats = GameObject.FindGameObjectsWithTag("BeatNote");
+                //Destroy(NoteBeats[I]);
+                GameObject NB = NoteBeats[I];
+                NoteBeats.Remove(NB);
+                Destroy(NB);
                 
                 
             }
+            if (NoteBeats[I].transform.position.z < EndVertical*2 - NoteDiameter)
+            {
+                //Destroy(NoteBeats[I]);
+                GameObject NB = NoteBeats[I];
+                NoteBeats.Remove(NB);
+                Destroy(NB);
 
+
+            }
         }
     }
 
@@ -60,8 +72,9 @@ public class NoteManager : MonoBehaviour
         int Track = koreographyEvent.GetIntValue();
         Track -= 1;
         Instantiate(NoteBeat, Tracks[Track].transform.position, Tracks[Track].transform.rotation, Tracks[Track].transform);
-        //Notes.Add(Tracks[Track].transform.Find("NoteBeat").gameObject);
-        //Notes[Notes.Count - 1].transform.SetParent(null);
-        NoteBeats = GameObject.FindGameObjectsWithTag("BeatNote");
+        NoteBeats.Add(Tracks[Track].transform.Find("NoteBeat(Clone)").gameObject);
+        NoteBeats[NoteBeats.Count - 1].transform.SetParent(null);
+        //NoteBeats = GameObject.FindGameObjectsWithTag("BeatNote");
+        //NoteBeats.Add(NoteBeat);
     }
 }
